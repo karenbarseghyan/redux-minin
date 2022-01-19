@@ -1,6 +1,6 @@
 import FetchedPosts from "./components/FetchedPosts";
-// import PostForm from "./components/PostForm";
-import PostForms from "./components/PostForms";
+import PostForm from "./components/PostForm";
+// import PostForms from "./components/PostForms";
 import Posts from "./components/Posts";
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <div className="container pt-3">
       <div className="row">
         <div className="col"> 
-          <PostForms />
+          <PostForm />
         </div>
       </div>
       <div className="row">
