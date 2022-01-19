@@ -8,7 +8,7 @@ function App() {
     <div className="container pt-3">
       <div className="row">
         <div className="col"> 
-          <PostForm />
+          <PostForms />
         </div>
       </div>
       <div className="row">

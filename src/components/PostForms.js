@@ -1,18 +1,25 @@
 import React, { useState } from 'react'
+import { connect } from "react-redux"
+import { createPost } from '../redux/actions';
 
-function PostForms() {
-    const [name, setName] = useState("");
+function PostForms(props) {
+    const [title, setTitle] = useState("");
 
     const changeInputHandler = (ev) => {
-        console.log(ev.target.value)
-        setName(ev.target.value);
-        
+        setTitle(ev.target.value);
     }
 
     const handleSubmit = (ev) => {
         ev.preventDefault();
-        console.log("wholeName = ",name);
-        setName("");
+        setTitle("");
+        if(!title.trim()){
+            return
+        }
+        const newPost = {
+            title, 
+            id: Date.now().toString()
+        }
+        props.createPost(newPost)
     }
 
     return (
@@ -23,7 +30,7 @@ function PostForms() {
                         type="text" 
                         className="form-control" 
                         id="title" 
-                        value={name}
+                        value={title}
                         onChange={changeInputHandler}
                     />
                 </div>
@@ -32,4 +39,8 @@ function PostForms() {
     )
 }
 
-export default PostForms
+const mapDisptchToProps = {
+    createPost
+}
+
+export default connect(null, mapDisptchToProps)(PostForms)
