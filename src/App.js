@@ -1,3 +1,4 @@
+import DisplayPosts from "./components/DisplayPosts";
 import FetchedPosts from "./components/FetchedPosts";
 import PostForm from "./components/PostForm";
 // import PostForms from "./components/PostForms";
@@ -19,6 +20,10 @@ function App() {
         <div className="col"> 
         <h2>Async Posts</h2>
           <FetchedPosts /> 
+        </div>
+        <div className="col"> 
+        <h2>Display Fetched Posts</h2>
+          <DisplayPosts />
         </div>
       </div>
     </div>
