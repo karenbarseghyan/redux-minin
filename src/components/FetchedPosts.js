@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector }  from "react-redux"
 import { fetchPosts } from '../redux/actions'
+import Loader from './Loader';
 
 function FetchedPosts() {
     const dispatch = useDispatch();
@@ -10,9 +11,7 @@ function FetchedPosts() {
 
     if(loading) {
         return (
-            <div className="spinner-border text-primary" role="status">
-                <span className="visually-hidden">Loading...</span>
-            </div>
+           <Loader />
         )
     }
 
